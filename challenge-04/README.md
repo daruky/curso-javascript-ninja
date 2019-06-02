@@ -112,7 +112,55 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
+const carro = {
+    'marca': 'fiat',
+    'modelo': 'uno',
+    'placa': 'WAG-1234',
+    'ano': 2002,
+    'cor': 'preto',
+    'quantasPortas': 4,
+    'assentos': 5,
+    'quantidadePessoas': 0,
+}
 
+carro.mudarCor = function(cor) {
+    carro.cor - cor;
+}
+
+carro.obterCor = function() {
+    return carro.cor;
+}
+
+carro.obterMarca = function() {
+    return carro.marca
+}
+
+carro.obterMarcaModelo = function() {
+    return `Esse carro é um ${carro.marca} ${carro.modelo}`
+}
+
+carro.addPessoas = function(x) {
+    if(x < carro.assentos) {
+        carro.quantidadePessoas = x
+        console.log(`Já temos ${carro.quantidadePessoas} pessoas no carro!`)
+        livre = 5 - x;
+        plural = 'pessoas'
+        if(livre === 1) {
+            plural = 'pessoa'
+        }
+        console.log(`So cabem mais ${livre} ${plural}!`)
+
+    }
+
+    if(x > carro.assentos || x > carro.quantidadePessoas) {
+        console.log('O carro já está lotado')
+    }
+
+}
+
+
+
+carro.addPessoas(4)
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
